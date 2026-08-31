@@ -158,8 +158,6 @@ h1,h2,.num{font-family:'Chakra Petch','IBM Plex Sans Thai',sans-serif}
 
 /* ---------- หัวเรื่อง ---------- */
 .top{padding:clamp(38px,7vw,72px) 0 26px;text-align:center}
-/* เครื่องหมายวงโคจรเล็ก ๆ เหนือชื่อ — จำลอง mood โลโก้วงรีในโปสเตอร์ต้นฉบับ */
-.mark{width:52px;height:52px;display:block;margin:0 auto 14px;overflow:visible}
 .wordmark{
   font-weight:700;font-size:clamp(40px,8vw,84px);line-height:1;
   letter-spacing:.10em;padding-left:.10em;
@@ -392,7 +390,7 @@ footer{
   }
 
   body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .skip, .controls, .aurora, .mark{display:none !important}
+  .skip, .controls, .aurora{display:none !important}
   .app{max-width:none;padding:0}
 
   /* หัวเรื่องบีบเหลือบรรทัดเดียว — ของเดิม 4 บรรทัดกินพื้นที่จนดันแถวท้ายตารางล้นไปหน้า 2 */
@@ -451,11 +449,6 @@ footer{
   <div class="aurora"></div>
 
   <header class="top">
-    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-      <ellipse cx="32" cy="32" rx="27" ry="11" transform="rotate(-20 32 32)" fill="none" stroke="var(--plasma)" stroke-width="2.5"/>
-      <ellipse cx="32" cy="32" rx="19" ry="27" transform="rotate(35 32 32)" fill="none" stroke="var(--ion)" stroke-width="2.2" opacity="0.85"/>
-      <circle cx="32" cy="32" r="4.5" fill="var(--plasma)"/>
-    </svg>
     <h1 class="wordmark" translate="no">GALAXY<small>Wellness &amp; Health Club</small></h1>
     <p class="month num">September 2026</p>
     <p><span class="branch" id="branch">
