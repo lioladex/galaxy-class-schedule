@@ -44,15 +44,15 @@
   --edge-2:rgba(255,255,255,.18);
   --text:#F4F1FF;
   --muted:#A69CD0;
-  --plasma:#FFB23F;         /* สีเน้น 1/2 ประจำสาขา — แก้ตรงนี้เวลาทำสาขาใหม่ ห้ามให้ค่าซ้ำกับสาขาอื่น */
-  --ion:#4D9FFF;            /* สีเน้น 2/2 ประจำสาขา — เหลืองอำพัน+ฟ้าสว่าง คู่ตัดกันชุดใหม่ ไม่ซ้ำ 3 สาขาก่อนหน้า */
-  --rail:rgba(255,178,63,.35);
+  --plasma:#5570FF;         /* สีเน้น 1/2 ประจำสาขา — แก้ตรงนี้เวลาทำสาขาใหม่ ห้ามให้ค่าซ้ำกับสาขาอื่น */
+  --ion:#38E8D0;            /* สีเน้น 2/2 ประจำสาขา — อินดิโก้+ทีล ใกล้โทน Bangna ไม่ซ้ำสาขาอื่น */
+  --rail:rgba(85,112,255,.40);
   --r:14px;
   --shadow:rgba(0,0,0,.45);
-  --wordmark-grad:linear-gradient(100deg,#fff 8%,#FFE8C2 38%,var(--plasma) 72%,var(--ion) 100%);
+  --wordmark-grad:linear-gradient(100deg,#fff 8%,#C8D0FF 38%,var(--plasma) 72%,var(--ion) 100%);
   --aurora-bg:
-    radial-gradient(760px 300px at 76% 4%, rgba(255,178,63,.22), transparent 68%),
-    radial-gradient(620px 280px at 12% 12%, rgba(77,159,255,.22), transparent 70%),
+    radial-gradient(760px 300px at 76% 4%, rgba(85,112,255,.28), transparent 68%),
+    radial-gradient(620px 280px at 12% 12%, rgba(56,232,208,.18), transparent 70%),
     url('../../assets/bg/galaxy.jpg') center 22% / cover no-repeat;
 
   /* สีประจำหมวดคลาส — พาสเทล ไว้เด่นบนพื้นมืด (ใช้ชุดเดียวกันทุกสาขา เพื่อให้ผู้ใช้จำสีต่อประเภทคลาสได้ข้ามสาขา) */
@@ -75,15 +75,15 @@
     --edge-2:rgba(30,20,10,.24);
     --text:#231B0E;
     --muted:#6B5D45;
-    --plasma:#B36B00;
-    --ion:#1A6AC8;
-    --rail:rgba(179,107,0,.28);
+    --plasma:#3040CC;
+    --ion:#0E9A8E;
+    --rail:rgba(48,64,204,.28);
     --shadow:rgba(20,18,40,.16);
     --wordmark-grad:linear-gradient(100deg,var(--text) 4%,var(--plasma) 55%,var(--ion) 100%);
     --aurora-bg:
-      radial-gradient(760px 300px at 76% 4%, rgba(179,107,0,.08), transparent 65%),
+      radial-gradient(760px 300px at 76% 4%, rgba(85,112,255,.10), transparent 65%),
       radial-gradient(700px 340px at 18% 10%, rgba(100,80,220,.13), transparent 68%),
-      radial-gradient(500px 260px at 80% 90%, rgba(26,106,200,.11), transparent 70%);
+      radial-gradient(500px 260px at 80% 90%, rgba(14,154,142,.09), transparent 70%);
 
     --c-yoga:#3E56B8; --c-cycle:#2F5590; --c-pump:#C1522A; --c-combat:#96591A;
     --c-dance:#6B3FB0; --c-zumba:#8A6100; --c-kid:#1D6FA8; --c-fly:#0E7F79;
@@ -99,15 +99,15 @@
   --edge-2:rgba(20,18,60,.26);
   --text:#1C1830;
   --muted:#5054A0;
-  --plasma:#B36B00;
-  --ion:#1A6AC8;
-  --rail:rgba(179,107,0,.28);
+  --plasma:#3040CC;
+  --ion:#0E9A8E;
+  --rail:rgba(48,64,204,.28);
   --shadow:rgba(20,18,40,.16);
   --wordmark-grad:linear-gradient(100deg,var(--text) 4%,var(--plasma) 55%,var(--ion) 100%);
   --aurora-bg:
-    radial-gradient(760px 300px at 76% 4%, rgba(179,107,0,.08), transparent 65%),
+    radial-gradient(760px 300px at 76% 4%, rgba(85,112,255,.10), transparent 65%),
     radial-gradient(700px 340px at 18% 10%, rgba(100,80,220,.13), transparent 68%),
-    radial-gradient(500px 260px at 80% 90%, rgba(26,106,200,.11), transparent 70%);
+    radial-gradient(500px 260px at 80% 90%, rgba(14,154,142,.09), transparent 70%);
 
   --c-yoga:#3E56B8; --c-cycle:#2F5590; --c-pump:#C1522A; --c-combat:#96591A;
   --c-dance:#6B3FB0; --c-zumba:#8A6100; --c-kid:#1D6FA8; --c-fly:#0E7F79;
@@ -121,7 +121,7 @@ body{
   font-family:'IBM Plex Sans Thai','Chakra Petch',system-ui,sans-serif;
   background:var(--void);color:var(--text);
   -webkit-font-smoothing:antialiased;
-  -webkit-tap-highlight-color:rgba(77,159,255,.22);
+  -webkit-tap-highlight-color:rgba(85,112,255,.22);
   overflow-x:hidden;
   transition:background-color .25s ease,color .25s ease;
 }
