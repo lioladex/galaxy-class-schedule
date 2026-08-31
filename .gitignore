@@ -1,0 +1,17 @@
+# ระบบปฏิบัติการ
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# เครื่องมือ / เอดิเตอร์
+.vscode/
+.idea/
+node_modules/
+.claude/
+skills-lock.json
+
+# ไฟล์ทำงานชั่วคราว
+*.psd
+*.ai
+*~
+*.tmp
