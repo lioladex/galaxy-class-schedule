@@ -8,11 +8,10 @@
 
 | สาขา | โฟลเดอร์ | URL ที่ส่งลูกค้า | สถานะ |
 |---|---|---|---|
-| บางนา (Bangna) | `/bangna/` | `https://<domain>/bangna/` | ✅ ใช้งานจริง |
-| รังสิต (Rangsit) | `/rangsit/` | `https://<domain>/rangsit/` | ยังไม่สร้าง |
-| วิภาวดี (Vibhavadi) | `/vibhavadi/` | `https://<domain>/vibhavadi/` | ✅ ใช้งานจริง |
-
-> แก้ `<domain>` เป็นโดเมนจริงหลังผูก GitHub Pages / hosting แล้ว
+| บางนา (Bangna) | `/bangna/` | https://lioladex.github.io/galaxy-class-schedule/bangna/ | ✅ ใช้งานจริง |
+| วิภาวดี (Vibhavadi) | `/vibhavadi/` | https://lioladex.github.io/galaxy-class-schedule/vibhavadi/ | ✅ ใช้งานจริง |
+| สาทร (Sathorn) | `/sathorn/` | https://lioladex.github.io/galaxy-class-schedule/sathorn/ | ✅ ใช้งานจริง |
+| รังสิต (Rangsit) | `/rangsit/` | https://lioladex.github.io/galaxy-class-schedule/rangsit/ | ยังไม่สร้าง |
 
 ## เช็กก่อนส่งให้ลูกค้าทุกครั้ง
 
