@@ -369,7 +369,7 @@ footer{
    จึงได้ PDF ขนาดเล็ก สร้างไว จ่าหน้าลงกระดาษ A4 แนวนอนได้พอดี
    ============================================================ */
 @media print{
-  @page{ size:A4 landscape; margin:10mm; }
+  @page{ size:A4 portrait; margin:10mm; }
 
   :root, [data-theme]{
     --void:#ffffff;        --void-rgb:255,255,255;
@@ -412,7 +412,8 @@ footer{
   .branch svg{width:10px;height:10px}
 
   /* ของหนักสุดของหน้า — ตัดออกตอนพิมพ์เพื่อไฟล์เล็กและประหยัดหมึก */
-  .thumb{display:none !important}
+  .thumb{display:block !important;aspect-ratio:unset;height:48px;overflow:hidden}
+  .thumb svg{display:none}
 
   .board{padding:6px 0 0}
   .sched{border-spacing:2px}
@@ -422,10 +423,15 @@ footer{
 
   .card{border:1px solid var(--edge);box-shadow:none;border-radius:var(--r)}
   .card:hover{transform:none;box-shadow:none;border-color:var(--edge)}
-  .meta{padding:3px 5px;border-top:2px solid var(--accent)}
-  .name{font-size:8.5px;letter-spacing:0;line-height:1.15}
-  .by{font-size:7.5px;margin-top:1px;line-height:1.1}
-  .tt{font-size:7px;margin-bottom:1px;line-height:1.1}
+  .meta{
+    padding:2px 4px;border-top:2px solid var(--accent);
+    display:flex;flex-direction:column-reverse;justify-content:flex-start;
+    flex:0 0 auto
+  }
+  .name{font-size:8px;letter-spacing:0;line-height:1.15;margin:0;order:2}
+  .by{font-size:7px;line-height:1.15;margin:0;order:1}
+  .tt{font-size:6.5px;line-height:1.15;margin:0;order:3}
+  .meta .tt:empty,.meta .by:empty,.meta .name:empty{display:none}
   .slot-time{font-size:9px;padding:0 5px 0 0 !important}
   .slot-time .to{font-size:8px}
   .slot-time::before,.slot-time::after{display:none}
@@ -832,4 +838,5 @@ render(false);
 </script>
 </body>
 </html>
+
 
