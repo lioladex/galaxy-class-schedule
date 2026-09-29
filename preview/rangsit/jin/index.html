@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
@@ -53,7 +53,7 @@
   --aurora-bg:
     radial-gradient(760px 300px at 76% 4%, rgba(85,112,255,.28), transparent 68%),
     radial-gradient(620px 280px at 12% 12%, rgba(56,232,208,.18), transparent 70%),
-    url('../../assets/bg/galaxy.jpg') center 22% / cover no-repeat;
+    url('../../../assets/bg/galaxy.jpg') center 22% / cover no-repeat;
 
   /* สีประจำหมวดคลาส — พาสเทล ไว้เด่นบนพื้นมืด (ใช้ชุดเดียวกันทุกสาขา เพื่อให้ผู้ใช้จำสีต่อประเภทคลาสได้ข้ามสาขา) */
   --c-yoga:#8FA0E8; --c-cycle:#6E8FC9; --c-pump:#E8926F; --c-combat:#D08A4E;
@@ -587,7 +587,7 @@ const narrow = window.matchMedia('(max-width: 640px)');
    ------------------------------------------------------------ */
 function cardHTML(k, folder, big, eager){
   const a = art(k.name), fam = a[0], ic = a[1];
-  const base = '../../assets/images/' + folder + '/' + (k.img || slug(k.name));
+  const base = '../../../assets/images/' + folder + '/' + (k.img || slug(k.name));
   const dims = big ? ' width="800" height="600"' : ' width="640" height="400"';
   return '<article class="card k-' + fam + '">' +
            '<div class="thumb">' + ICON[ic] +
@@ -823,3 +823,4 @@ render(false);
 </script>
 </body>
 </html>
+

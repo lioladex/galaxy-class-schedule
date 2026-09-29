@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="UTF-8">
@@ -6,26 +6,26 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0B0A16" id="themeColorMeta">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="ตารางคลาสออกกำลังกาย Galaxy สาขารังสิต (สำหรับลูกบ้าน/จิน) ประจำเดือนกันยายน 2026">
-<title>GALAXY สาขารังสิต (จิน) — ตารางคลาส October 2026</title>
+<meta name="description" content="ตารางคลาสออกกำลังกาย Galaxy สาขารังสิต (สำหรับสมาชิก) ประจำเดือนกันยายน 2026">
+<title>GALAXY สาขารังสิต (Member) — ตารางคลาส October 2026</title>
 <!-- ลิงก์ที่ส่งให้ลูกค้าจะขึ้นพรีวิวพร้อมชื่อสาขา -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GALAXY">
-<meta property="og:title" content="GALAXY สาขารังสิต (จิน) — ตารางคลาส October 2026">
-<meta property="og:description" content="ตารางคลาสออกกำลังกาย Galaxy สาขารังสิต สำหรับลูกบ้าน/จิน ประจำเดือนกันยายน 2026">
-<meta property="og:image" content="https://lioladex.github.io/galaxy-class-schedule/assets/og/rangsit-jin.jpg">
+<meta property="og:title" content="GALAXY สาขารังสิต (Member) — ตารางคลาส October 2026">
+<meta property="og:description" content="ตารางคลาสออกกำลังกาย Galaxy สาขารังสิต สำหรับสมาชิก ประจำเดือนกันยายน 2026">
+<meta property="og:image" content="https://lioladex.github.io/galaxy-class-schedule/assets/og/rangsit-member.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://lioladex.github.io/galaxy-class-schedule/assets/og/rangsit-jin.jpg">
+<meta name="twitter:image" content="https://lioladex.github.io/galaxy-class-schedule/assets/og/rangsit-member.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
 <style>
 /* ============================================================
-   GALAXY CLASS SCHEDULE — สาขารังสิต (จิน)
+   GALAXY CLASS SCHEDULE — สาขารังสิต (Member)
    ตัวอักษร  Chakra Petch (หัวเรื่อง/ข้อมูล) + IBM Plex Sans Thai (เนื้อความ)
    โครงสร้าง รางเวลาเส้นเดียวเป็นแกน  ไม่มีกรอบกล่อง
    3 ระดับ   สัปดาห์+รูป / สัปดาห์ชิป / อะเจนดารายวัน — ไม่มี scroll แนวนอน
@@ -53,7 +53,7 @@
   --aurora-bg:
     radial-gradient(760px 300px at 76% 4%, rgba(85,112,255,.28), transparent 68%),
     radial-gradient(620px 280px at 12% 12%, rgba(56,232,208,.18), transparent 70%),
-    url('../../assets/bg/galaxy.jpg') center 22% / cover no-repeat;
+    url('../../../assets/bg/galaxy.jpg') center 22% / cover no-repeat;
 
   /* สีประจำหมวดคลาส — พาสเทล ไว้เด่นบนพื้นมืด (ใช้ชุดเดียวกันทุกสาขา เพื่อให้ผู้ใช้จำสีต่อประเภทคลาสได้ข้ามสาขา) */
   --c-yoga:#8FA0E8; --c-cycle:#6E8FC9; --c-pump:#E8926F; --c-combat:#D08A4E;
@@ -549,19 +549,28 @@ function mountPhoto(img){
 }
 
 /* ============================================================
-   ข้อมูลตาราง — ตารางฉบับลูกบ้าน/จิน (ย่อยกว่าฉบับสมาชิก)
+   ข้อมูลตาราง — ตารางฉบับสมาชิก (เต็ม)
    ============================================================ */
 const D = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 const c = (name,by,tt,img) => ({name:name, by:by, tt:tt, img:img});
 
 const STUDIOS = {
-  jin:{
-    label:'Rangsit', title:'Jin Schedule', folder:'rangsit', days:D,
+  member:{
+    label:'Rangsit', title:'Member Schedule', folder:'rangsit', days:D,
     rows:[
-      ['09.00','09.50', { Mon:c('DANCE'), Thu:c('QIGONG') }],
-      ['10.00','10.50', { Mon:c('STRETCHING'), Thu:c('ELASTIC BAND'), Sat:c('QIGONG'), Sun:c('VARIETY DANCE') }],
+      ['09.00','09.50', {
+        Mon:c('DANCE'), Tue:c('PILATES MAT'), Wed:c('YOGA HATHA'),
+        Thu:c('QIGONG'), Fri:c('YOGA VINYASA')
+      }],
+      ['10.00','10.50', {
+        Mon:c('STRETCHING'), Tue:c('GALAXY BOXING'), Wed:c('PILATES MAT'),
+        Thu:c('ELASTIC BAND'), Fri:c('EASY STEP'), Sat:c('QIGONG'), Sun:c('VARIETY DANCE')
+      }],
       ['11.00','11.50', { Wed:c('BODY WEIGHT'), Fri:c('GALAXY BOXING') }],
       ['14.00','14.50', { Tue:c('AEROBIC BALL') }],
+      ['16.00','16.50', { Mon:c('GALAXY BOXING') }],
+      ['17.00','17.50', { Sat:c('GALAXY AQUA') }],
+      ['18.00','18.50', { Tue:c('VARIETY DANCE','','NEW CLASS'), Thu:c('ZUMBA') }],
       ['19.00','19.50', { Wed:c('GALAXY HIT'), Fri:c('GALAXY HIT'), Sat:c('GALAXY HIT') }]
     ]
   }
@@ -573,7 +582,7 @@ const MONTH = 'October 2026';
    สาขา — ทำสาขาใหม่โดยแก้แค่บล็อกนี้บล็อกเดียว
    (อย่าลืมแก้ <title> กับ og: ใน <head> ให้ตรงกันด้วย)
    ============================================================ */
-const BRANCH = { key:'rangsit-jin', name:'สาขารังสิต (จิน)', nameEn:'Rangsit Jin' };
+const BRANCH = { key:'rangsit-member', name:'สาขารังสิต (Member)', nameEn:'Rangsit Member' };
 
 const el = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -587,7 +596,7 @@ const narrow = window.matchMedia('(max-width: 640px)');
    ------------------------------------------------------------ */
 function cardHTML(k, folder, big, eager){
   const a = art(k.name), fam = a[0], ic = a[1];
-  const base = '../../assets/images/' + folder + '/' + (k.img || slug(k.name));
+  const base = '../../../assets/images/' + folder + '/' + (k.img || slug(k.name));
   const dims = big ? ' width="800" height="600"' : ' width="640" height="400"';
   return '<article class="card k-' + fam + '">' +
            '<div class="thumb">' + ICON[ic] +
@@ -823,3 +832,4 @@ render(false);
 </script>
 </body>
 </html>
+
