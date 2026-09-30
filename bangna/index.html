@@ -286,6 +286,7 @@ h1,h2,.num{font-family:'Chakra Petch','IBM Plex Sans Thai',sans-serif}
   font-size:10.5px;letter-spacing:.08em;color:var(--accent);
   font-variant-numeric:tabular-nums;
 }
+.print-sub{display:none}
 
 /* สีประจำหมวดคลาส */
 .k-yoga{--accent:var(--c-yoga)}   .k-cycle{--accent:var(--c-cycle)}
@@ -360,14 +361,13 @@ footer{
 
 /* ============================================================
    พิมพ์ / ส่งออก PDF
-   บังคับพื้นสว่างเสมอไม่ว่าจอจะตั้งธีมไหนไว้ — ประหยัดหมึกและอ่านง่ายบนกระดาษ
-   ตัดรูปถ่ายออกทั้งหมด (คือของหนักสุดของหน้านี้) เหลือแต่ตารางข้อความ
-   จึงได้ PDF ขนาดเล็ก สร้างไว จ่าหน้าลงกระดาษ A4 แนวนอนได้พอดี
+   คงหน้าตาเหมือนเว็บ (light theme forced) — JS ใน forcePrintView() คำนวณ zoom
+   เพื่อสเกลตารางให้ fit A4 portrait อัตโนมัติ
    ============================================================ */
 @media print{
   @page{ size:A4 portrait; margin:10mm; }
 
-  :root, [data-theme]{
+  :root,[data-theme]{
     --void:#ffffff;        --void-rgb:255,255,255;
     --panel:#ffffff;
     --panel-2:#f4f4f7;
@@ -379,68 +379,59 @@ footer{
     --ion:#0b7d77;
     --rail:#c9c9d6;
     --shadow:transparent;
-    --r:6px;
-
-    --c-yoga:#3E56B8; --c-cycle:#2F5590; --c-pump:#C1522A; --c-combat:#96591A;
-    --c-dance:#6B3FB0; --c-zumba:#8A6100; --c-kid:#1D6FA8; --c-fly:#0E7F79;
-    --c-step:#5B4AA0; --c-pil:#9C5936; --c-power:#96368A;
+    --c-yoga:#3E56B8;--c-cycle:#2F5590;--c-pump:#C1522A;--c-combat:#96591A;
+    --c-dance:#6B3FB0;--c-zumba:#8A6100;--c-kid:#1D6FA8;--c-fly:#0E7F79;
+    --c-step:#5B4AA0;--c-pil:#9C5936;--c-power:#96368A;
   }
-
   body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .skip, .controls, .aurora{display:none !important}
+  .wordmark{background:none !important;-webkit-text-fill-color:var(--text) !important;color:var(--text) !important}
+  .skip,.controls,.aurora{display:none !important}
+
   .app{max-width:none;padding:0}
+  /* header 2 บรรทัด: title + subtitle */
+  .top{padding:14px 0 2px;display:flex;flex-direction:column;align-items:center;gap:3px}
 
-  /* หัวเรื่องบีบเหลือบรรทัดเดียว — ของเดิม 4 บรรทัดกินพื้นที่จนดันแถวท้ายตารางล้นไปหน้า 2 */
-  .top{
-    padding:0 0 6px;display:flex;align-items:baseline;justify-content:center;
-    gap:10px;flex-wrap:wrap;text-align:left;
+  /* headline — ขนาดตายตัว เหมือน Sathorn */
+  .wordmark{font-size:20px;line-height:1;letter-spacing:.18em}
+  .wordmark::after{content:" CLASS SCHEDULE";letter-spacing:.18em}
+  .wordmark small{display:none}
+  .print-sub{
+    display:block;font-family:'Chakra Petch',sans-serif;font-size:11px;
+    font-weight:500;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;
+    margin:0
   }
-  .wordmark{
-    font-size:17px;line-height:1;letter-spacing:.08em;padding-left:.08em;text-shadow:none;
-    background:none !important;-webkit-text-fill-color:var(--text) !important;color:var(--text) !important;
-  }
-  .wordmark small{display:none}                 /* "Class Schedule" — ซ้ำกับหัวข้อ ตัดทิ้งเพื่อประหยัดพื้นที่ */
-  .month{margin-top:0;color:var(--muted);font-size:9px;letter-spacing:.14em}
-  .branch{
-    margin-top:0;padding:2px 9px 2px 7px;background:none;
-    border:1px solid var(--edge-2);color:var(--text);font-size:9px;
-  }
-  .branch svg{width:10px;height:10px}
+  .month,.branch{display:none}
 
-  .thumb{display:block !important;aspect-ratio:unset;height:48px;overflow:hidden}
-  .thumb svg{display:none}
+  /* รูปภาพ */
+  .thumb{display:block !important;aspect-ratio:16/9 !important}
 
-  .board{padding:6px 0 0}
-  .sched{border-spacing:2px}
-  .sched thead th{font-size:8.5px;letter-spacing:.08em;padding-bottom:2px}
+  /* card text */
+  .tt{font-size:16px !important;line-height:1 !important;margin-bottom:5px !important}
+  .name{font-size:21px !important;line-height:1.05 !important}
+  .by{font-size:17px !important;line-height:1 !important;margin-top:3px !important}
+
+  /* table frame */
+  .col-time{width:90px !important}
+  .slot-time{font-size:20px !important}
+  .slot-time .to{font-size:18px !important}
+  .sched thead th{font-size:22px !important}
+
+  /* override responsive CSS ที่ active เพราะ print width < 1039px */
+  .meta{padding:9px 8px 10px !important;border-top:2px solid var(--accent) !important;border-left:0 !important}
+  .legend{padding:4px 0 !important;font-size:10px}
+  footer{display:none !important}
+  .board{padding:4px 0 0}
+
   thead{display:table-header-group}
   tr{page-break-inside:avoid}
-
-  .card{border:1px solid var(--edge);box-shadow:none;border-radius:var(--r)}
-  .card:hover{transform:none;box-shadow:none;border-color:var(--edge)}
-  .meta{
-    padding:2px 4px;border-top:2px solid var(--accent);
-    display:flex;flex-direction:column-reverse;justify-content:flex-start;
-    flex:0 0 auto
+  .card:hover{transform:none;box-shadow:none}
+  .sched tbody td{height:1px}
+  .sched tbody td .card{height:100%;box-sizing:border-box}
+  .sched tbody tr:nth-child(odd) td,
+  .sched tbody tr:nth-child(odd) th{
+    background:#f7f6ff;
+    box-shadow:6px 0 0 #f7f6ff,-6px 0 0 #f7f6ff;
   }
-  .name{font-size:8px;letter-spacing:0;line-height:1.15;margin:0;order:2}
-  .by{font-size:7px;line-height:1.15;margin:0;order:1}
-  .tt{font-size:6.5px;line-height:1.15;margin:0;order:3}
-  .meta .tt:empty,.meta .by:empty,.meta .name:empty{display:none}
-  .slot-time{font-size:9px;padding:0 5px 0 0 !important}
-  .slot-time .to{font-size:8px}
-  .slot-time::before,.slot-time::after{display:none}  /* หมุด/รางเวลาเป็นของตกแต่งจอ ตัดทิ้งตอนพิมพ์ */
-  .col-time{width:46px}
-
-  /* บังคับการ์ดใหญ่ (Cycling) ให้กลับมาขนาดพิมพ์ปกติ */
-  .sched.big .meta{padding:3px 5px}
-  .sched.big .name{font-size:8.5px}
-  .sched.big .slot-time{font-size:9px}
-  .sched.big .col-time{width:46px}
-
-  .legend{font-size:9px;padding:6px 0 4px;gap:4px 20px}
-  .legend dt{font-size:9px;color:var(--ion)}
-  footer{font-size:7.5px;padding:5px 0;border-top:1px solid var(--edge)}
 }
 </style>
 </head>
@@ -452,6 +443,7 @@ footer{
 
   <header class="top">
     <h1 class="wordmark" translate="no">GALAXY<small>Class Schedule</small></h1>
+    <p class="print-sub"></p>
     <p class="month num">September 2026</p>
     <p><span class="branch" id="branch">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -846,11 +838,35 @@ prefersLight.addEventListener('change', function(){
 let printSnapshot = null;
 function forcePrintView(){
   printSnapshot = { title: document.title };
-  renderWeek(STUDIOS[studio]);   /* เมินตัวแปร day/narrow ไปเลย พิมพ์เต็มสัปดาห์เสมอ */
+  renderWeek(STUDIOS[studio]);
   document.title = 'Galaxy-' + BRANCH.nameEn + '-' + STUDIOS[studio].title.replace(/\s+/g,'') + '-Sep2026';
+  document.querySelector('.print-sub').textContent = BRANCH.name + ' ประจำเดือน ' + MONTH;
+  var app = document.querySelector('.app');
+  var topEl = document.querySelector('.top');
+  app.style.zoom = '';
+  topEl.style.zoom = '';
+  var toHide = [].slice.call(document.querySelectorAll('.skip,.controls,.aurora'));
+  var smallEl = document.querySelector('.wordmark small');
+  toHide.forEach(function(el){ el.style.display='none'; });
+  if(smallEl) smallEl.style.display='none';
+  app.style.maxWidth = '718px';
+  void document.body.offsetHeight;
+  var contentH = document.documentElement.scrollHeight;
+  app.style.maxWidth = '';
+  toHide.forEach(function(el){ el.style.display=''; });
+  if(smallEl) smallEl.style.display='';
+  var pageH = 1047;
+  var z = Math.min(1, pageH / contentH);
+  console.log('[print] contentH=', contentH, 'scale=', z);
+  if(contentH > 0){
+    app.style.zoom = z;
+    topEl.style.zoom = 1 / z;
+  }
 }
 function restoreAfterPrint(){
   if(!printSnapshot) return;
+  document.querySelector('.app').style.zoom = '';
+  document.querySelector('.top').style.zoom = '';
   document.title = printSnapshot.title;
   printSnapshot = null;
   render(false);
