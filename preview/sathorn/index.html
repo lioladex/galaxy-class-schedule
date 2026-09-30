@@ -277,7 +277,7 @@ h1,h2,.num{font-family:'Chakra Petch','IBM Plex Sans Thai',sans-serif}
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,transparent 45%,rgba(11,10,22,.72) 100%);
 }
-.meta{padding:7px 10px 9px;border-top:2px solid var(--accent)}
+.meta{padding:10px 12px 12px;border-top:2px solid var(--accent)}
 .name{
   display:block;
   font-family:'Chakra Petch',sans-serif;font-weight:600;font-size:12.5px;
@@ -411,9 +411,21 @@ footer{
   /* รูปภาพ — บังคับแสดง (responsive CSS ซ่อนไว้ที่จอแคบ) */
   .thumb{display:block !important}
 
+  /* override responsive CSS ที่ active เพราะ print width < 1039px */
+  .meta{padding:5px 8px 6px !important;border-top:2px solid var(--accent) !important;border-left:0 !important}
+  .legend{padding:4px 0 !important;font-size:10px}
+  footer{display:none !important}
+
   thead{display:table-header-group}
   tr{page-break-inside:avoid}
   .card:hover{transform:none;box-shadow:none}
+  .sched tbody td{height:1px}
+  .sched tbody td .card{height:100%;box-sizing:border-box}
+  .sched tbody tr:nth-child(odd) td,
+  .sched tbody tr:nth-child(odd) th{
+    background:#f7f6ff;
+    box-shadow:6px 0 0 #f7f6ff,-6px 0 0 #f7f6ff;
+  }
 }
 </style>
 </head>
