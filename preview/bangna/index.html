@@ -6,13 +6,13 @@
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0B0A16" id="themeColorMeta">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="ตารางคลาสออกกำลังกาย Galaxy สาขาบางนา ประจำเดือนกันยายน 2026 — Cycling Studio, Studio 1 และ Pilates Studio">
-<title>GALAXY สาขาบางนา — ตารางคลาส September 2026</title>
+<meta name="description" content="ตารางคลาสออกกำลังกาย Galaxy สาขาบางนา ประจำเดือนตุลาคม 2026 — Cycling Studio, Studio 1 และ Pilates Studio">
+<title>GALAXY สาขาบางนา — ตารางคลาส October 2026</title>
 <!-- ลิงก์ที่ส่งให้ลูกค้าจะขึ้นพรีวิวพร้อมชื่อสาขา -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="GALAXY">
-<meta property="og:title" content="GALAXY สาขาบางนา — ตารางคลาส September 2026">
-<meta property="og:description" content="ตารางคลาส Cycling Studio, Studio 1 และ Pilates Studio ประจำเดือนกันยายน 2026">
+<meta property="og:title" content="GALAXY สาขาบางนา — ตารางคลาส October 2026">
+<meta property="og:description" content="ตารางคลาส Cycling Studio, Studio 1 และ Pilates Studio ประจำเดือนตุลาคม 2026">
 <meta property="og:image" content="https://lioladex.github.io/galaxy-class-schedule/assets/og/bangna.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -446,7 +446,7 @@ footer{
   <header class="top">
     <h1 class="wordmark" translate="no">GALAXY<small>Class Schedule</small></h1>
     <p class="print-sub"></p>
-    <p class="month num">September 2026</p>
+    <p class="month num">October 2026</p>
     <p><span class="branch" id="branch">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -594,7 +594,7 @@ const STUDIOS = {
   }
 };
 const KEYS = Object.keys(STUDIOS);
-const MONTH = 'September 2026';
+const MONTH = 'October 2026';
 
 /* ============================================================
    สาขา — ทำสาขาใหม่โดยแก้แค่บล็อกนี้บล็อกเดียว
@@ -841,7 +841,7 @@ let printSnapshot = null;
 function forcePrintView(){
   printSnapshot = { title: document.title };
   renderWeek(STUDIOS[studio]);
-  document.title = 'Galaxy-' + BRANCH.nameEn + '-' + STUDIOS[studio].title.replace(/\s+/g,'') + '-Sep2026';
+  document.title = 'Galaxy-' + BRANCH.nameEn + '-' + STUDIOS[studio].title.replace(/\s+/g,'') + '-Oct2026';
   document.querySelector('.print-sub').textContent = BRANCH.name + ' ประจำเดือน ' + MONTH;
   var app = document.querySelector('.app');
   var topEl = document.querySelector('.top');
